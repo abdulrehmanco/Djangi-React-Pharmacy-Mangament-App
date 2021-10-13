@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{%block body%}
+ <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Edit Profile</h4>
+                  <p class="card-category">Complete your profile</p>
+                </div>
+                <div class="card-body">
+                  <form method='POST' action="">
+                   {% csrf_token%}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Name</label>
+                          <input type="text" name='name4' id="name4" class="form-control" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class='row'>  
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Contact</label>
+                          <input type="text" name='contact4' id="contact4" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Added_On</label>
+                          </br>
+                          <input type="date" name='date4' id="date4" class="form-control">
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Address</label>
+                          <input type="text" name='address4' id="address4" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                   
+                   
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+{%endblock%}

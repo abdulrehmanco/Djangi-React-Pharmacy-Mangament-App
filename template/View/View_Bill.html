@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Bills</h4>
+                    <a class="btn btn-sm btn-primary" style="margin-left:-2px; margin-top: 0px;" href="bill_add">Add Bill</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                
+                                <th>
+                                    Medicine 
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Customer
+                                </th>
+                                <th>
+                                    Added_On
+                                </th>
+                            </thead>
+                            <tbody>
+                            {% for bil in bili%}
+                                <tr>
+                                    <td>
+                                     {{bil.medicine_id}}
+                                    </td>
+                                    <td>
+                                    {{bil.qty}}
+                                    </td>
+                                    <td>
+                                     {{bil.customer_id}}
+                                    </td>
+                                    <td class="text-primary">
+                                    {{bil.added_on}}
+                                    </td>
+                                </tr>
+                            {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+    {%endblock body%}

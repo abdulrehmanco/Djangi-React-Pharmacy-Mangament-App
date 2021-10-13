@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{%block body%}
+ <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Edit Profile</h4>
+                  <p class="card-category">Complete your profile</p>
+                </div>
+                <div class="card-body">
+                  <form method='POST' action="">
+                   {% csrf_token%}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Employee</label>
+                          <input type="text" name='name4' id="name4" class="form-control" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class='row'>  
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Salary Amount</label>
+                          <input type="text" name='salary_am' id="salary_am" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Added_On</label>
+                          </br>
+                          <input type="date" name='date5' id="date5" class="form-control">
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Salary Month</label>
+                          </br>
+                          <input type="date" name='salary_mo' id="salary_mo" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                   
+                   
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+{%endblock%}

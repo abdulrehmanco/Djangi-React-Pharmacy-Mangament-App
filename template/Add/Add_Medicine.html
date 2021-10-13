@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{%block body%}
+ <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Medicines</h4>
+                  <p class="card-category">Edit Stock</p>
+                </div>
+                <div class="card-body">
+                  <form method='POST' action="">
+                   {% csrf_token%}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Name</label>
+                          <input type="text" name='name1' id="name1" class="form-control" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class='row'>  
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <input type="text" name='desc1' id="desc1" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Company</label>
+                          <input type="text" name='name2' id="name2" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Selling Price</label>
+                          <input type="text" name='sellprice' id="sellprice" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Buying Price</label>
+                          <input type="text" name='buyprice' id="buyprice" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">In_Stock</label>
+                          <input type="text" name='stock1' id="stock1" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Shelf_No</label>
+                          <input type="text" name='shelf' id="shelf" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Added_On</label>
+                          </br>
+                          <input type="date" name='date1' id="date1" class="form-control">
+                        </div>
+                      </div>
+                     
+                    </div>
+                   
+                   
+                    <button type="submit" class="btn btn-primary pull-right">Update Stock</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+{%endblock%}

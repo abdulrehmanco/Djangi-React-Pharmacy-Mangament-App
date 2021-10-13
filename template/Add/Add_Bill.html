@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{%block body%}
+ <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Bill</h4>
+                  
+                  
+                </div>
+                <div class="card-body">
+                  <form method='POST' action="">
+                   {% csrf_token%}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Medicine Name</label>
+                          <input type="text" name='name1' id="name1" class="form-control" >
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Customer Name</label>
+                          <input type="text" name='name3' id="name3" class="form-control" >
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Quantity</label>
+                          <input type="text" name='quant' id="quant" class="form-control" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Added_On</label>
+                          </br>
+                          <input type="date" name='date6' id="date6" class="form-control">
+                        </div>
+                      </div>
+                     
+                    </div>
+                   
+                   
+                    <button type="submit" class="btn btn-primary pull-right">Update Bill</button>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+{%endblock%}

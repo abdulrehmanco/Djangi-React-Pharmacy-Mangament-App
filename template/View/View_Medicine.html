@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Medicines</h4>
+                    
+                    <a class="btn btn-sm btn-primary" style="margin-left:-2px; margin-top: 0px;" href="medicine_add">Add-Product</a>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Company
+                                </th>
+                                <th>
+                                    Selling Price
+                                </th>
+                                <th>
+                                    Buying Price
+                                </th>
+                                <th>
+                                    Shelf_No
+                                </th>
+                                <th>
+                                    In_Stock 
+                                </th>
+                                <th>
+                                    Added_On 
+                                </th>
+                            </thead>
+                            <tbody>
+                            {% for med in medi%}
+                                <tr>
+                                    
+                                    <td>
+                                     {{med.name}}
+                                    </td>
+                                    <td>
+                                    {{med.desc}}
+                                    </td>
+                                    <td>
+                                     {{med.company_id}}
+                                    </td>
+                                    <td>
+                                     {{med.sell_price}}
+                                    </td>
+                                    <td>
+                                     {{med.buy_price}}
+                                    </td>
+                                    <td>
+                                     {{med.in_stock}}
+                                    </td>
+                                    <td>
+                                     {{med.shelf_no}}
+                                    </td>
+                                    <td class="text-primary">
+                                    {{med.added_on}}
+                                    </td>
+                                </tr>
+                            {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+    {%endblock body%}

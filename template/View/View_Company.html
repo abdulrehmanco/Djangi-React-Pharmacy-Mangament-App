@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Companies</h4>
+                    <a class="btn btn-sm btn-primary" style="margin-left:-2px; margin-top: 0px;" href="company_add">Add-Company</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    Address
+                                </th>
+                                <th>
+                                    Contact
+                                </th>
+                                <th>
+                                    Added_On
+                                </th>
+                            </thead>
+                            <tbody>
+                            {% for comp in compi%}
+                                <tr>
+                                    
+                                    <td>
+                                     {{comp.name}}
+                                    </td>
+                                    <td>
+                                     {{comp.desc}}
+                                    </td>
+                                    <td>
+                                    {{comp.address}}
+                                    </td>
+                                    <td>
+                                     {{comp.contact}}
+                                    </td>
+                                    <td class="text-primary">
+                                    {{comp.added_on}}
+                                    </td>
+                                </tr>
+                            {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+    {%endblock body%}
