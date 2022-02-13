@@ -3,12 +3,24 @@ from django.db import models
 from cms.utils import unique_slug_generator
 from django.db.models.signals import pre_save
 from django.db.models.fields import TextField
+from django.contrib.auth.models import AbstractUser
+
+
+
+class User(AbstractUser):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+    username = models.CharField(max_length=255,unique=True)
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = []
 
 # Create your models here.
 
 class Company(models.Model):
-    id = models.AutoField(primary_key=True)
     name= models.CharField(max_length=200, null=True)
+    id = models.AutoField(primary_key=True)
     contact= models.CharField(max_length=200, null=True)
     address= models.CharField(max_length=200, null=True)
     desc=  models.TextField(max_length=500, null=True)
@@ -61,7 +73,7 @@ class Bill(models.Model):
     customer_id=models.ForeignKey(Customer,on_delete=models.CASCADE)
     added_on=models.DateTimeField(auto_now_add=True)
     def __str__(self):
-         return self.name
+         return str(self.customer_id)
 
 class EmployeeSalary(models.Model):
     id=models.AutoField(primary_key=True)
@@ -70,4 +82,4 @@ class EmployeeSalary(models.Model):
     salary_amount=models.CharField(max_length=255)
     added_on=models.DateTimeField(auto_now_add=True)
     def __str__(self):
-         return self.name
+         return self.employee_id
